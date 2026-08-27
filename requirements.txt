@@ -1,0 +1,4 @@
+# Class Lock Dependencies
+# Standard library is prioritized for maximum reliability and simplicity.
+# Optional packaging and linting dependencies:
+pyinstaller>=6.0.0
