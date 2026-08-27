@@ -1,107 +1,148 @@
-# Class Lock
+# Class Lock 🔒
 
-A lightweight, personal productivity desktop utility for Windows designed to lock your computer into a focused study environment during online classes.
+> A lightweight, distraction-proof Windows desktop utility that locks your computer into a minimal study environment during online classes.
 
-## Workflow
+[![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-blue.svg)](https://github.com/ExplorerAC/class-lock)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://python.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Release](https://img.shields.io/badge/Release-v1.0.0-success.svg)](https://github.com/ExplorerAC/class-lock/releases)
+
+---
+
+## 🎯 The Objective
+
+During an online class or exam, lock your computer into a dedicated study environment where you can access **only one specified class website and the Windows Calculator**.
+
+Class Lock is a personal productivity tool—not a permanent kiosk restriction or invasive enterprise spyware. You toggle it **ON before class** and **OFF after class**.
 
 ```text
 Normal PC
-   ↓
-START CLASS
-   ↓
-Class Mode
-   ├── Class Website (Allowed)
-   └── Calculator (Allowed)
-   ↓
-END CLASS
-   ↓
-Normal PC
+   │
+   ├── [ Click "START CLASS" ]
+   ▼
+CLASS MODE ACTIVE
+   ├── Class Website        [ ALLOWED - Fullscreen / App Mode ]
+   ├── Windows Calculator   [ ALLOWED - Quick Pop-up Access ]
+   └── All Other Apps/Tabs  [ BLOCKED - Anti-Distraction Guardian ]
+   │
+   ├── [ Click "END CLASS" or Ctrl+Alt+End ]
+   ▼
+Normal PC (100% Restored)
 ```
 
 ---
 
-## Key Features
+## ✨ Features
 
-* **Minimal Desktop Interface**: Clear, distraction-free Tkinter UI.
-* **Native Chrome / Edge Profile**: Loads your native browser profile so all your extensions (ad blockers, dark mode, password managers, classroom plugins), accounts, and logins work seamlessly.
-* **Tab & Window Lockdown**: Removes the top tab strip to eliminate tab clicking, while hardware keyboard hooks suppress `Ctrl+Tab`, `Ctrl+1..9`, `Ctrl+T`, `Ctrl+N`, and `Ctrl+W`.
-* **Anti-Minimize Guardian**: Automatically keeps the study window maximized and prevents switching away to distracting applications.
-* **Calculator Allowed**: Quick access to the Windows Calculator via the top floating bar.
-* **Always-On-Top Floating Pill Bar**: A compact, prominent top toolbar displays class time, a `🖩 Calc` button, and a large `🔴 END CLASS` button.
-* **Emergency Escape Routes**: Press **`Ctrl + Alt + End`** (or **`Ctrl + Alt + X`**) anywhere at any time to instantly exit Class Mode safely.
-* **Complete Installer**: Includes a dedicated Windows Setup Installer (`ClassLock_Setup.exe`) that installs to `%LOCALAPPDATA%\Programs\ClassLock`, adds Desktop and Start Menu shortcuts, and registers with Windows Add/Remove Programs.
+* **🌐 Native Browser & Extensions Preserved**: Launches using your native Google Chrome or Microsoft Edge profile. All your browser extensions (ad blockers, dark mode, classroom plugins, password managers) and logged-in accounts work out of the box.
+* **🚫 Zero Tab Switching & No New Tabs**: Uses app-window presentation that hides the top tab bar strip, while a hardware-level keyboard hook blocks `Ctrl+Tab`, `Ctrl+1..9`, `Ctrl+T`, `Ctrl+N`, `Ctrl+W`, and `Ctrl+Shift+N`.
+* **🛡️ Anti-Minimize & Focus Guardian**: Automatically keeps the study window maximized and immediately suppresses unauthorized applications that attempt to steal focus.
+* **🖩 Calculator Always Available**: Windows Calculator is an explicit allowed exception. Launch or bring it to the front with one click.
+* **📌 Always-On-Top Floating Pill Bar**: A compact, sleek control bar sits at the top center of your screen with a live session timer, a `🖩 Calc` quick launcher, and a prominent `🔴 END CLASS` button.
+* **🚨 Emergency Escape Shortcut**: Press **`Ctrl + Alt + End`** (or **`Ctrl + Alt + X`**) anywhere at any time to immediately and safely terminate Class Mode and restore normal PC operation.
+* **📦 Portable Executable & Windows Installer**: Includes both a zero-install portable `.exe` and a complete Windows Setup Wizard (`ClassLock_Setup.exe`) that creates Desktop and Start Menu shortcuts with **zero administrator privileges required**.
 
 ---
 
-## Installation & Distribution (For GitHub)
+## 📥 Download & Installation
 
-### Option 1: One-Click Windows Setup Installer (Recommended for Users)
-Download `ClassLock_Setup.exe` from the GitHub Releases page and run it:
-- Installs to `%LOCALAPPDATA%\Programs\ClassLock` (no administrator privileges needed).
-- Automatically creates a Desktop shortcut (`Class Lock.lnk`).
-- Automatically creates a Start Menu shortcut.
-- Registers an uninstaller in Windows *Add or Remove Programs*.
+### Option 1: One-Click Setup Installer (Recommended for Users)
+1. Go to the [**GitHub Releases**](https://github.com/ExplorerAC/class-lock/releases) page.
+2. Download **`ClassLock_Setup.exe`**.
+3. Run the installer (No Python installation required!).
+4. Launch **Class Lock** from your Desktop or Start Menu.
 
 ### Option 2: Portable Executable (No Install Required)
-Download and double-click `ClassLock.exe` to run immediately.
+1. Download **`ClassLock.exe`** from [Releases](https://github.com/ExplorerAC/class-lock/releases).
+2. Double-click to run immediately without installing.
 
-### Option 3: Run / Install from Source
+### Option 3: Run from Source (Developers)
 ```powershell
-# Clone the repository
-git clone https://github.com/your-username/ClassLock.git
-cd ClassLock
+# 1. Clone the repository
+git clone https://github.com/ExplorerAC/class-lock.git
+cd class-lock
 
-# Run directly with Python
+# 2. Run with Python 3.10+
 python src/main.py
 
-# Or build both the portable exe and the setup installer:
+# 3. (Optional) Build standalone executables
 python build.py
 ```
 
 ---
 
-## GitHub Actions Automated Releases
+## ⌨️ Shortcut Behavior Cheatsheet
 
-A GitHub Actions workflow is included at [`.github/workflows/release.yml`](.github/workflows/release.yml).
-Whenever you push a tag (e.g. `git tag v1.0.0 && git push origin v1.0.0`), GitHub Actions will automatically:
-1. Run all unit tests.
-2. Build `dist/ClassLock.exe` (Portable) and `dist/ClassLock_Setup.exe` (Installer).
-3. Publish them as release assets on your GitHub repository.
+| Shortcut | Action in Class Mode |
+| :--- | :--- |
+| **`Ctrl + Alt + End`** or **`Ctrl + Alt + X`** | 🚨 **Emergency Exit** (Instantly terminates Class Mode & restores normal PC) |
+| **Alphanumeric typing & Numbers** | ✅ **Allowed** (For notes, class chat, video controls, math) |
+| **`Ctrl + Tab` / `Ctrl + Shift + Tab`** | ❌ **Blocked** (Prevents tab cycling) |
+| **`Ctrl + 1` ... `Ctrl + 9`** | ❌ **Blocked** (Prevents switching to specific tabs) |
+| **`Ctrl + T` / `Ctrl + N` / `Ctrl + Shift + N`** | ❌ **Blocked** (Prevents opening new tabs / windows) |
+| **`Ctrl + W` / `Ctrl + Shift + T`** | ❌ **Blocked** (Prevents closing / reopening tabs) |
+| **`Alt + Tab` / `Alt + Esc`** | ❌ **Blocked** (Prevents app switching) |
+| **`Win` Key / `Win + D` / `Win + M`** | ❌ **Blocked** (Prevents opening Start Menu or showing Desktop) |
 
 ---
 
-## Project Structure
+## 📂 Project Architecture
 
 ```text
-ClassLock/
+class-lock/
 ├── .github/
 │   └── workflows/
-│       └── release.yml          # GitHub Actions auto-release workflow
+│       └── release.yml          # Automated CI/CD build & GitHub Releases
 ├── dist/
 │   ├── ClassLock.exe            # Standalone Portable Executable (9.8 MB)
 │   └── ClassLock_Setup.exe      # Windows Setup Wizard Installer (19.3 MB)
 ├── src/
 │   ├── __init__.py
-│   ├── main.py                  # Entry point with signal & exit handling
-│   ├── ui.py                    # Tkinter UI (Normal mode & Floating Pill mode)
-│   ├── class_mode.py            # Lifecycle & state orchestrator
-│   ├── browser_controller.py    # Native Chrome/Edge launcher
+│   ├── main.py                  # Entry point with exit handlers & DPI scaling
+│   ├── ui.py                    # Tkinter UI (Standard mode & Floating Pill mode)
+│   ├── class_mode.py            # Session state & lifecycle orchestrator
+│   ├── browser_controller.py    # Native Chrome/Edge launcher & window closer
 │   ├── window_controller.py     # Focus Guardian & Calculator manager
 │   └── keyboard_hook.py         # Low-level Windows keyboard interceptor
 ├── installer/
 │   ├── installer.py             # Setup wizard GUI source
-│   ├── Installer.spec           # PyInstaller spec for setup executable
-│   └── ClassLock_Setup.iss      # Optional Inno Setup script
+│   ├── Installer.spec           # PyInstaller spec for setup installer
+│   └── ClassLock_Setup.iss      # Inno Setup 6 script
 ├── config/
-│   └── settings.json            # Persists user settings
+│   └── settings.json            # Persists user settings (last URL)
 ├── tests/
-│   ├── test_url_validation.py   # Unit tests
+│   ├── test_url_validation.py   # Unit tests for URL validator
 │   ├── test_browser_controller.py
 │   └── test_keyboard_hook.py
 ├── build.py                     # Master build script (Builds portable + installer)
-├── install.bat                  # One-click local install helper
-├── ClassLock.spec               # PyInstaller spec for main app
-├── requirements.txt
-├── .gitignore
+├── install.bat                  # One-click Windows batch installer
+├── install.ps1                  # One-click PowerShell installer
+├── requirements.txt             # Python dependencies
+├── LICENSE                      # MIT License
 └── README.md
 ```
+
+---
+
+## 🧪 Running Automated Tests
+
+```powershell
+python -m unittest discover -s tests -p "test_*.py" -v
+```
+
+---
+
+## 🛠️ Building Standalone Binaries
+
+To build both `dist/ClassLock.exe` and `dist/ClassLock_Setup.exe` from source:
+
+```powershell
+pip install pyinstaller
+python build.py
+```
+
+---
+
+## 📄 License
+
+This project is open-source software licensed under the [MIT License](LICENSE).
