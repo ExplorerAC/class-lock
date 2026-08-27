@@ -1,4 +1,4 @@
-# Class Lock 🔒
+# Class Lock
 
 > A lightweight, distraction-proof Windows desktop utility that locks your computer into a minimal study environment during online classes.
 
@@ -9,11 +9,11 @@
 
 ---
 
-## 🎯 The Objective
+## The Objective
 
 During an online class or exam, lock your computer into a dedicated study environment where you can access **only one specified class website and the Windows Calculator**.
 
-Class Lock is a personal productivity tool—not a permanent kiosk restriction or invasive enterprise spyware. You toggle it **ON before class** and **OFF after class**.
+Class Lock is a personal productivity tool—not a permanent kiosk restriction or invasive enterprise software. You toggle it **ON before class** and **OFF after class**.
 
 ```text
 Normal PC
@@ -32,24 +32,24 @@ Normal PC (100% Restored)
 
 ---
 
-## ✨ Features
+## Features
 
-* **🌐 Native Browser & Extensions Preserved**: Launches using your native Google Chrome or Microsoft Edge profile. All your browser extensions (ad blockers, dark mode, classroom plugins, password managers) and logged-in accounts work out of the box.
-* **🚫 Zero Tab Switching & No New Tabs**: Uses app-window presentation that hides the top tab bar strip, while a hardware-level keyboard hook blocks `Ctrl+Tab`, `Ctrl+1..9`, `Ctrl+T`, `Ctrl+N`, `Ctrl+W`, and `Ctrl+Shift+N`.
-* **🛡️ Anti-Minimize & Focus Guardian**: Automatically keeps the study window maximized and immediately suppresses unauthorized applications that attempt to steal focus.
-* **🖩 Calculator Always Available**: Windows Calculator is an explicit allowed exception. Launch or bring it to the front with one click.
-* **📌 Always-On-Top Floating Pill Bar**: A compact, sleek control bar sits at the top center of your screen with a live session timer, a `🖩 Calc` quick launcher, and a prominent `🔴 END CLASS` button.
-* **🚨 Emergency Escape Shortcut**: Press **`Ctrl + Alt + End`** (or **`Ctrl + Alt + X`**) anywhere at any time to immediately and safely terminate Class Mode and restore normal PC operation.
-* **📦 Portable Executable & Windows Installer**: Includes both a zero-install portable `.exe` and a complete Windows Setup Wizard (`ClassLock_Setup.exe`) that creates Desktop and Start Menu shortcuts with **zero administrator privileges required**.
+* **Native Browser and Extensions Preserved**: Launches using your native Google Chrome or Microsoft Edge profile. All your browser extensions (ad blockers, dark mode, classroom plugins, password managers) and logged-in accounts work out of the box.
+* **Zero Tab Switching and No New Tabs**: Uses app-window presentation that hides the top tab bar strip, while a hardware-level keyboard hook blocks `Ctrl+Tab`, `Ctrl+1..9`, `Ctrl+T`, `Ctrl+N`, `Ctrl+W`, and `Ctrl+Shift+N`.
+* **Anti-Minimize and Focus Guardian**: Automatically keeps the study window maximized and immediately suppresses unauthorized applications that attempt to steal focus.
+* **Calculator Always Available**: Windows Calculator is an explicit allowed exception. Launch or bring it to the front with one click.
+* **Always-On-Top Floating Pill Bar**: A compact, sleek control bar sits at the top center of your screen with a live session timer, a Calculator quick launcher, and a prominent `END CLASS` button.
+* **Emergency Escape Shortcut**: Press **`Ctrl + Alt + End`** (or **`Ctrl + Alt + X`**) anywhere at any time to immediately and safely terminate Class Mode and restore normal PC operation.
+* **Portable Executable and Windows Installer**: Includes both a zero-install portable `.exe` and a complete Windows Setup Wizard (`ClassLock_Setup.exe`) that creates Desktop and Start Menu shortcuts with **zero administrator privileges required**.
 
 ---
 
-## 📥 Download & Installation
+## Download and Installation
 
 ### Option 1: One-Click Setup Installer (Recommended for Users)
 1. Go to the [**GitHub Releases**](https://github.com/ExplorerAC/class-lock/releases) page.
 2. Download **`ClassLock_Setup.exe`**.
-3. Run the installer (No Python installation required!).
+3. Run the installer (No Python installation required).
 4. Launch **Class Lock** from your Desktop or Start Menu.
 
 ### Option 2: Portable Executable (No Install Required)
@@ -71,22 +71,22 @@ python build.py
 
 ---
 
-## ⌨️ Shortcut Behavior Cheatsheet
+## Shortcut Behavior Cheatsheet
 
 | Shortcut | Action in Class Mode |
 | :--- | :--- |
-| **`Ctrl + Alt + End`** or **`Ctrl + Alt + X`** | 🚨 **Emergency Exit** (Instantly terminates Class Mode & restores normal PC) |
-| **Alphanumeric typing & Numbers** | ✅ **Allowed** (For notes, class chat, video controls, math) |
-| **`Ctrl + Tab` / `Ctrl + Shift + Tab`** | ❌ **Blocked** (Prevents tab cycling) |
-| **`Ctrl + 1` ... `Ctrl + 9`** | ❌ **Blocked** (Prevents switching to specific tabs) |
-| **`Ctrl + T` / `Ctrl + N` / `Ctrl + Shift + N`** | ❌ **Blocked** (Prevents opening new tabs / windows) |
-| **`Ctrl + W` / `Ctrl + Shift + T`** | ❌ **Blocked** (Prevents closing / reopening tabs) |
-| **`Alt + Tab` / `Alt + Esc`** | ❌ **Blocked** (Prevents app switching) |
-| **`Win` Key / `Win + D` / `Win + M`** | ❌ **Blocked** (Prevents opening Start Menu or showing Desktop) |
+| **`Ctrl + Alt + End`** or **`Ctrl + Alt + X`** | **Emergency Exit** (Instantly terminates Class Mode & restores normal PC) |
+| **Alphanumeric typing & Numbers** | **Allowed** (For notes, class chat, video controls, math) |
+| **`Ctrl + Tab` / `Ctrl + Shift + Tab`** | **Blocked** (Prevents tab cycling) |
+| **`Ctrl + 1` ... `Ctrl + 9`** | **Blocked** (Prevents switching to specific tabs) |
+| **`Ctrl + T` / `Ctrl + N` / `Ctrl + Shift + N`** | **Blocked** (Prevents opening new tabs / windows) |
+| **`Ctrl + W` / `Ctrl + Shift + T`** | **Blocked** (Prevents closing / reopening tabs) |
+| **`Alt + Tab` / `Alt + Esc`** | **Blocked** (Prevents app switching) |
+| **`Win` Key / `Win + D` / `Win + M`** | **Blocked** (Prevents opening Start Menu or showing Desktop) |
 
 ---
 
-## 📂 Project Architecture
+## Project Architecture
 
 ```text
 class-lock/
@@ -124,7 +124,7 @@ class-lock/
 
 ---
 
-## 🧪 Running Automated Tests
+## Running Automated Tests
 
 ```powershell
 python -m unittest discover -s tests -p "test_*.py" -v
@@ -132,7 +132,7 @@ python -m unittest discover -s tests -p "test_*.py" -v
 
 ---
 
-## 🛠️ Building Standalone Binaries
+## Building Standalone Binaries
 
 To build both `dist/ClassLock.exe` and `dist/ClassLock_Setup.exe` from source:
 
@@ -143,6 +143,6 @@ python build.py
 
 ---
 
-## 📄 License
+## License
 
 This project is open-source software licensed under the [MIT License](LICENSE).
