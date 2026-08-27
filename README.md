@@ -3,6 +3,7 @@
 > A lightweight, distraction-proof Windows desktop utility that locks your computer into a minimal study environment during online classes.
 
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-blue.svg)](https://github.com/ExplorerAC/class-lock)
+[![Browser](https://img.shields.io/badge/Browser-Google%20Chrome%20Only-yellow.svg)](https://google.com/chrome)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Release](https://img.shields.io/badge/Release-v1.0.0-success.svg)](https://github.com/ExplorerAC/class-lock/releases)
@@ -21,9 +22,9 @@ Normal PC
    ├── [ Click "START CLASS" ]
    ▼
 CLASS MODE ACTIVE
-   ├── Class Website        [ ALLOWED - Fullscreen / App Mode ]
-   ├── Windows Calculator   [ ALLOWED - Quick Pop-up Access ]
-   └── All Other Apps/Tabs  [ BLOCKED - Anti-Distraction Guardian ]
+   ├── Class Website (Chrome) [ ALLOWED - Fullscreen / App Mode ]
+   ├── Windows Calculator     [ ALLOWED - Quick Pop-up Access ]
+   └── All Other Apps/Tabs    [ BLOCKED - Anti-Distraction Guardian ]
    │
    ├── [ Click "END CLASS" or Ctrl+Alt+End ]
    ▼
@@ -32,9 +33,18 @@ Normal PC (100% Restored)
 
 ---
 
+## Browser Requirements
+
+> **Important**: Class Lock exclusively supports **Google Chrome**. Make sure Google Chrome is installed on your system.
+
+* **Native Google Chrome Profile**: Launches using your primary Google Chrome profile so all your extensions (ad blockers, dark mode, classroom plugins, password managers) and logged-in accounts work seamlessly.
+* Other browsers (Edge, Firefox, Brave) are not supported in this version.
+
+---
+
 ## Features
 
-* **Native Browser and Extensions Preserved**: Launches using your native Google Chrome or Microsoft Edge profile. All your browser extensions (ad blockers, dark mode, classroom plugins, password managers) and logged-in accounts work out of the box.
+* **Native Chrome and Extensions Preserved**: Launches using your native Google Chrome profile. All your browser extensions and logged-in accounts work out of the box.
 * **Zero Tab Switching and No New Tabs**: Uses app-window presentation that hides the top tab bar strip, while a hardware-level keyboard hook blocks `Ctrl+Tab`, `Ctrl+1..9`, `Ctrl+T`, `Ctrl+N`, `Ctrl+W`, and `Ctrl+Shift+N`.
 * **Anti-Minimize and Focus Guardian**: Automatically keeps the study window maximized and immediately suppresses unauthorized applications that attempt to steal focus.
 * **Calculator Always Available**: Windows Calculator is an explicit allowed exception. Launch or bring it to the front with one click.
@@ -47,10 +57,11 @@ Normal PC (100% Restored)
 ## Download and Installation
 
 ### Option 1: One-Click Setup Installer (Recommended for Users)
-1. Go to the [**GitHub Releases**](https://github.com/ExplorerAC/class-lock/releases) page.
-2. Download **`ClassLock_Setup.exe`**.
-3. Run the installer (No Python installation required).
-4. Launch **Class Lock** from your Desktop or Start Menu.
+1. Ensure **Google Chrome** is installed on your computer.
+2. Go to the [**GitHub Releases**](https://github.com/ExplorerAC/class-lock/releases) page.
+3. Download **`ClassLock_Setup.exe`**.
+4. Run the installer (No Python installation required).
+5. Launch **Class Lock** from your Desktop or Start Menu.
 
 ### Option 2: Portable Executable (No Install Required)
 1. Download **`ClassLock.exe`** from [Releases](https://github.com/ExplorerAC/class-lock/releases).
@@ -101,7 +112,7 @@ class-lock/
 │   ├── main.py                  # Entry point with exit handlers & DPI scaling
 │   ├── ui.py                    # Tkinter UI (Standard mode & Floating Pill mode)
 │   ├── class_mode.py            # Session state & lifecycle orchestrator
-│   ├── browser_controller.py    # Native Chrome/Edge launcher & window closer
+│   ├── browser_controller.py    # Google Chrome launcher & window closer
 │   ├── window_controller.py     # Focus Guardian & Calculator manager
 │   └── keyboard_hook.py         # Low-level Windows keyboard interceptor
 ├── installer/
