@@ -1,4 +1,4 @@
-# Class Lock
+# Class Lock 🔒
 
 > A lightweight, distraction-proof Windows desktop utility that locks your computer into a minimal study environment during online classes.
 
